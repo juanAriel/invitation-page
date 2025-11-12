@@ -94,6 +94,17 @@ export default function FormConfirmacion() {
             customClass: {
               popup: "w-[90%] sm:w-[400px]",
             },
+            timer: 2000,
+            willClose: () => {
+              setIsSending(false);
+              setFormData({
+                nombre: "",
+                celular: "",
+                asistencia: "si",
+                acompanante: "no",
+                cantidadAcompanantes: "",
+              });
+            },
           }).then(() => setIsSending(false));
         }
       );
