@@ -166,7 +166,18 @@ export default function FormConfirmacion() {
               name="cantidadAcompanantes"
               placeholder="Cantidad de acompañantes"
               value={formData.cantidadAcompanantes}
-              onChange={handleChange}
+              onChange={(e) => {
+                let value = e.target.value;
+                if (value === "" || value === "0") {
+                  setFormData({ ...formData, cantidadAcompanantes: "" });
+                } else {
+                  const numValue = Math.max(1, Math.min(3, parseInt(value)));
+                  setFormData({ ...formData, cantidadAcompanantes: numValue });
+                }
+              }}
+              min="1"
+              max="3"
+              step="1"
               className="p-2 flex-1 rounded border border-gray-300 focus:ring-2 focus:ring-pacay outline-none"
             />
           )}
