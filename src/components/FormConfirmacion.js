@@ -26,7 +26,6 @@ export default function FormConfirmacion() {
       onSubmit={handleSubmit}
       className="flex flex-col gap-3 md:w-1/2 order-2 md:order-1"
     >
-      {/* Nombre completo */}
       <div>
         <input
           type="text"

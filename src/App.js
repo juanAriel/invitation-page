@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 import FormConfirmacion from "./components/FormConfirmacion";
+import {
+  ClipboardDocumentCheckIcon,
+  HeartIcon,
+  MapPinIcon,
+} from "@heroicons/react/16/solid";
 
 function App() {
   const targetDate = new Date("2025-12-06T00:00:00").getTime();
@@ -33,49 +38,50 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col items-center p-4 md:p-8 bg-night">
       <header className="text-center mb-8 mt-4">
-        <p className="uppercase tracking-widest font-bold text-white text-sm">
+        <p className="uppercase tracking-widest font-bold text-white text-sm md:text-2xl">
           Estás invitado a la
         </p>
         <img
           src="/images/toga.png"
           alt="Gorro de graduación"
-          className="w-[150px] mx-auto my-3"
+          className="w-[150px] md:w-[200px] mx-auto my-3"
         />
-        <h1 className="momo-signature-regular text-3xl md:text-4xl font-bold text-[#fbdc32] ">
+        <h1 className="momo-signature-regular text-3xl md:text-4xl font-bold text-yellow-400 ">
           Fiesta de mi graduación
         </h1>
-        <p className="message-principal mt-2 text-base text-white">
+        <p className="message-principal mt-4 text-base text-white">
           Es un día muy especial para mí y quiero pasarlo con mis seres queridos
         </p>
       </header>
 
-      {/* Sección del contador */}
       <section className="text-center mb-10 w-full md:w-2/3">
-        <h2 className="text-xl font-semibold text-yellow-400 mb-6 tracking-wider">
-          {/* Falta poco para el gran día */}
-        </h2>
+        {/* <h2 className="text-xl font-semibold text-yellow-400 mb-6 tracking-wider">
+          Falta poco para el gran día
+        </h2> */}
 
         <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-white font-bold text-2xl md:text-3xl">
-          <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 bg-white/10 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
-            <span className="text-4xl md:text-5xl">{timeLeft.days}</span>
+          <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
+            <span className="text-4xl md:text-5xl">
+              {timeLeft.days.toString().padStart(2, "0")}
+            </span>
             <span className="text-sm font-medium mt-2">Días</span>
           </div>
 
-          <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 bg-white/10 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
+          <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
             <span className="text-4xl md:text-5xl">
               {timeLeft.hours.toString().padStart(2, "0")}
             </span>
             <span className="text-sm font-medium mt-2">Horas</span>
           </div>
 
-          <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 bg-white/10 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
+          <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
             <span className="text-4xl md:text-5xl">
               {timeLeft.minutes.toString().padStart(2, "0")}
             </span>
             <span className="text-sm font-medium mt-2">Min</span>
           </div>
 
-          <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 bg-white/10 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
+          <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
             <span className="text-4xl md:text-5xl">
               {timeLeft.seconds.toString().padStart(2, "0")}
             </span>
@@ -83,8 +89,12 @@ function App() {
           </div>
         </div>
 
-        <p className="text-yellow-400 mt-5 font-bold text-2xl tracking-wide">
-          06 Diciembre 2025
+        <p className="text-yellow-400 mt-5 font-bold text-2xl tracking-wide flex items-center justify-center gap-4">
+          <span className="flex-1 border-t border-yellow-400"></span>
+          <span className="title-section text-3xl md:text-6xl whitespace-nowrap">
+            06 Diciembre 2025
+          </span>
+          <span className="flex-1 border-t border-yellow-400"></span>
         </p>
       </section>
 
@@ -92,15 +102,19 @@ function App() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="md:w-1/2 text-center">
             <h2 className="title-section  text-yellow-400 text-2xl font-bold text-navy mb-4 text-center md:text-left flex items-center justify-center">
+              <MapPinIcon className="size-6 text-red-500 mx-2" />
               Lugar del evento
             </h2>
             <p className="message-principal mt-2 text-base text-white">
-              Te esperamos en <strong>El Salon de eventos MAYLIZ</strong> para
-              celebrar juntos este día tan especial.
+              Te esperamos en{" "}
+              <strong className="text-yellow-400 font-bold">
+                El Salon de eventos MAYLIZ
+              </strong>{" "}
+              para celebrar juntos este día tan especial.
               <br />
               <br />
               ¡No faltes! Tendremos música, momentos inolvidables y mucha
-              alegría 🎉
+              alegría.
             </p>
           </div>
 
@@ -125,10 +139,12 @@ function App() {
 
           <div className="md:w-1/2 text-center  order-1 md:order-2">
             <h2 className="title-section text-2xl font-bold text-navy mb-4 text-center md:text-left flex items-center justify-center  text-yellow-400">
+              <ClipboardDocumentCheckIcon className="size-6 text-blue-500 mx-2" />
               Confirmar asistencia
             </h2>
-            <p className="message-principal mt-2 text-base text-white  mb-2">
+            <p className="message-principal mt-2 text-base text-white mb-2 inline-flex items-center">
               Tu presencia es importante para mí
+              <HeartIcon className="size-6 text-red-500 mx-1" />
             </p>
             <p className="message-principal mt-2 text-base text-white">
               Por favor, confirma tu asistencia antes del evento para poder
@@ -140,7 +156,7 @@ function App() {
       </section>
 
       <footer className="text-center text-sm text-white mt-auto py-4 border-t border-gray-200 w-full">
-        <p>© 2025 Mi Graduación | Todos los derechos reservados</p>
+        <p>Todos los derechos reservados © 2025</p>
       </footer>
     </div>
   );
