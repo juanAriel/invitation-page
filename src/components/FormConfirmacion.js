@@ -2,7 +2,7 @@ import React from "react";
 import emailJs from "@emailjs/browser";
 
 export default function FormConfirmacion() {
-  const [acompanante, setAcompanante] = React.useState("no");
+  const [setAcompanante] = React.useState("no");
   const [formData, setFormData] = React.useState({
     nombre: "",
     celular: "",
@@ -47,7 +47,7 @@ export default function FormConfirmacion() {
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
-        (response) => {
+        () => {
           console.log("enviado con exito");
           alert("¡Gracias por confirmar tu asistencia!");
           setFormData({
