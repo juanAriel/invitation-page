@@ -1,8 +1,8 @@
 import React from "react";
 import emailJs from "@emailjs/browser";
+import Swal from "sweetalert2";
 
 export default function FormConfirmacion() {
-  const [setAcompanante] = React.useState("no");
   const [formData, setFormData] = React.useState({
     nombre: "",
     celular: "",
@@ -10,15 +10,29 @@ export default function FormConfirmacion() {
     acompanante: "no",
     cantidadAcompanantes: "",
   });
+  const [isSending, setIsSending] = React.useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    if (name === "acompanante") setAcompanante(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (isSending) return;
+
+    setIsSending(true);
+
+    Swal.fire({
+      title: "Enviando tu confirmación...",
+      text: "Por favor espera un momento.",
+      allowOutsideClick: false,
+      didOpen: () => Swal.showLoading(),
+      customClass: {
+        popup: "w-[90%] sm:w-[400px]",
+      },
+    });
 
     const message = `
   Confirmación de asistencia
@@ -49,7 +63,17 @@ export default function FormConfirmacion() {
       .then(
         () => {
           console.log("enviado con exito");
-          alert("¡Gracias por confirmar tu asistencia!");
+          Swal.fire({
+            title: "¡Gracias por confirmar!",
+            text: "Tu confirmación se ha enviado con éxito.",
+            icon: "success",
+            confirmButtonColor: "#facc15",
+            background: "#0a1444",
+            color: "#fff",
+            customClass: {
+              popup: "w-[90%] sm:w-[400px]",
+            },
+          }).then(() => setIsSending(false));
           setFormData({
             nombre: "",
             celular: "",
@@ -60,7 +84,17 @@ export default function FormConfirmacion() {
         },
         (error) => {
           console.error("Error al enviar:", error);
-          alert("Ocurrió un error al enviar el formulario.");
+          Swal.fire({
+            title: "Oops...",
+            text: "Ocurrió un error al enviar el formulario. Intenta de nuevo.",
+            icon: "error",
+            confirmButtonColor: "#f87171",
+            background: "#0a1444",
+            color: "#fff",
+            customClass: {
+              popup: "w-[90%] sm:w-[400px]",
+            },
+          }).then(() => setIsSending(false));
         }
       );
   };
@@ -130,9 +164,14 @@ export default function FormConfirmacion() {
 
       <button
         type="submit"
-        className="bg-yellow-400 text-[#0a1444] rounded-lg py-2 font-semibold hover:bg-yellow-600 transition mt-2"
+        disabled={isSending}
+        className={`bg-yellow-400 text-[#0a1444] rounded-lg py-2 font-semibold transition mt-2 ${
+          isSending
+            ? "opacity-60 cursor-not-allowed"
+            : "hover:bg-yellow-600 cursor-pointer"
+        }`}
       >
-        Confirmar asistencia
+        {isSending ? "Enviando..." : "Confirmar asistencia"}
       </button>
     </form>
   );
