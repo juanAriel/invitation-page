@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/16/solid";
 
 function App() {
-  const targetDate = new Date("2025-12-06T00:00:00").getTime();
+  const targetDate = new Date("2025-12-06T18:00:00").getTime();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col items-center p-4 md:p-8 bg-night">
       <header className="text-center mb-8 mt-4">
-        <p className="uppercase tracking-widest font-bold text-white text-sm md:text-2xl">
+        <p className="uppercase tracking-widest font-bold text-white text-2sm md:text-2xl">
           Estás invitado a la
         </p>
         <img
@@ -55,9 +55,9 @@ function App() {
       </header>
 
       <section className="text-center mb-10 w-full md:w-2/3">
-        {/* <h2 className="text-xl font-semibold text-yellow-400 mb-6 tracking-wider">
+        <h2 className="text-xl font-bold text-yellow-400 mb-6 tracking-wider">
           Falta poco para el gran día
-        </h2> */}
+        </h2>
 
         <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-white font-bold text-2xl md:text-3xl">
           <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
@@ -89,12 +89,29 @@ function App() {
           </div>
         </div>
 
-        <p className="text-yellow-400 mt-5 font-bold text-2xl tracking-wide flex items-center justify-center gap-4">
-          <span className="flex-1 border-t border-yellow-400"></span>
-          <span className="title-section text-3xl md:text-6xl whitespace-nowrap">
-            06 Diciembre 2025
-          </span>
-          <span className="flex-1 border-t border-yellow-400"></span>
+        <p className="text-yellow-400 mt-5 font-bold text-2xl tracking-wide flex flex-col items-center justify-center">
+          <div className="text-yellow-400 mt-5 font-bold tracking-wide flex items-center justify-center gap-10">
+            <div className="flex flex-col items-center justify-center text-center">
+              <span className="border-t border-yellow-400 w-16 mb-2"></span>
+              <span className="uppercase text-lg md:text-xl">sabado</span>
+              <span className="border-t border-yellow-400 w-16 mt-2"></span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center text-center">
+              <span className="text-6xl md:text-8xl text-yellow-400 leading-none">
+                25
+              </span>
+              <span className="uppercase text-xl md:text-2xl tracking-widest mt-1">
+                marzo
+              </span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center text-center">
+              <span className="border-t border-yellow-400 w-16 mb-2"></span>
+              <span className="uppercase text-lg md:text-xl">18:00 pm</span>
+              <span className="border-t border-yellow-400 w-16 mt-2"></span>
+            </div>
+          </div>
         </p>
       </section>
 
