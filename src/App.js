@@ -61,28 +61,28 @@ function App() {
 
         <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-white font-bold text-2xl md:text-3xl">
           <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
-            <span className="text-4xl md:text-5xl">
+            <span className="text-2xl md:text-5xl">
               {timeLeft.days.toString().padStart(2, "0")}
             </span>
             <span className="text-sm font-medium mt-2">Dias</span>
           </div>
 
           <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
-            <span className="text-4xl md:text-5xl">
+            <span className="text-2xl md:text-5xl">
               {timeLeft.hours.toString().padStart(2, "0")}
             </span>
-            <span className="text-sm font-medium mt-2">Horas</span>
+            <span className="text-sm font-medium mt-2">Hrs</span>
           </div>
 
           <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
-            <span className="text-4xl md:text-5xl">
+            <span className="text-2xl md:text-5xl">
               {timeLeft.minutes.toString().padStart(2, "0")}
             </span>
             <span className="text-sm font-medium mt-2">Min</span>
           </div>
 
           <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
-            <span className="text-4xl md:text-5xl">
+            <span className="text-2xl md:text-5xl">
               {timeLeft.seconds.toString().padStart(2, "0")}
             </span>
             <span className="text-sm font-medium mt-2">Seg</span>
