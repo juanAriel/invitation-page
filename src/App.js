@@ -90,7 +90,7 @@ function App() {
         </div>
 
         <p className="text-yellow-400 mt-5 font-bold text-2xl tracking-wide flex flex-col items-center justify-center">
-          <div className="text-yellow-400 mt-5 font-bold tracking-wide flex items-center justify-center gap-10">
+          <div className="text-yellow-400 mt-5 font-bold tracking-wide flex items-center justify-center gap-5">
             <div className="flex flex-col items-center justify-center text-center">
               <span className="border-t border-yellow-400 w-16 mb-2"></span>
               <span className="uppercase text-lg md:text-xl">sabado</span>
@@ -99,10 +99,10 @@ function App() {
 
             <div className="flex flex-col items-center justify-center text-center">
               <span className="text-6xl md:text-8xl text-yellow-400 leading-none">
-                25
+                06
               </span>
               <span className="uppercase text-xl md:text-2xl tracking-widest mt-1">
-                marzo
+                Diciembre
               </span>
             </div>
 
