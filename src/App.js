@@ -47,10 +47,10 @@ function App() {
           className="w-[150px] md:w-[200px] mx-auto my-3"
         />
         <h1 className="momo-signature-regular text-3xl md:text-4xl font-bold text-yellow-400 ">
-          Fiesta de mi graduación
+          Fiesta de mi graduacion
         </h1>
         <p className="message-principal mt-4 text-base text-white">
-          Es un día muy especial para mí y quiero pasarlo con mis seres queridos
+          Es un día muy especial para mi y quiero pasarlo con mis seres queridos
         </p>
       </header>
 
@@ -64,7 +64,7 @@ function App() {
             <span className="text-4xl md:text-5xl">
               {timeLeft.days.toString().padStart(2, "0")}
             </span>
-            <span className="text-sm font-medium mt-2">Días</span>
+            <span className="text-sm font-medium mt-2">Dias</span>
           </div>
 
           <div className="flex flex-col items-center border-2 border-white rounded-xl px-3 md:px-5 py-2 md:py-3 shadow-lg backdrop-blur-sm transition hover:bg-white/20 hover:scale-105">
@@ -110,17 +110,17 @@ function App() {
               <strong className="text-yellow-400 font-bold">
                 El Salon de eventos MAYLIZ
               </strong>{" "}
-              para celebrar juntos este día tan especial.
+              para celebrar juntos este dia tan especial.
               <br />
               <br />
-              ¡No faltes! Tendremos música, momentos inolvidables y mucha
-              alegría.
+              ¡No faltes! Tendremos musica, momentos inolvidables y mucha
+              alegria.
             </p>
           </div>
 
           <div className="md:w-1/2">
             <iframe
-              title="Ubicación del evento"
+              title="Ubicacion del evento"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1228.3620747811203!2d-66.28021745679192!3d-17.391927123589916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e30b76f3041e35%3A0x6411d28eb4cbbfeb!2sSalon%20De%20Eventos%20MAYLIZ!5e0!3m2!1ses!2sbo!4v1762876270201!5m2!1ses!2sbo"
               width="100%"
               height="250"
@@ -143,7 +143,7 @@ function App() {
               Confirmar asistencia
             </h2>
             <p className="message-principal mt-2 text-base text-white mb-2 inline-flex items-center">
-              Tu presencia es importante para mí
+              Tu presencia es importante para mi
               <HeartIcon className="size-6 text-red-500 mx-1" />
             </p>
             <p className="message-principal mt-2 text-base text-white">
