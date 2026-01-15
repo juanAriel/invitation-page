@@ -25,7 +25,7 @@ export default function FormConfirmacion() {
     setIsSending(true);
 
     Swal.fire({
-      title: "Enviando tu confirmación...",
+      title: "Enviando tu confirmación..",
       text: "Por favor espera un momento.",
       allowOutsideClick: false,
       didOpen: () => Swal.showLoading(),
